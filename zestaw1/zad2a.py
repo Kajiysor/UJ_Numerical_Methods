@@ -5,7 +5,7 @@ c = 300000000.0
 v = 1.0
 
 def E_rel():
-    return(float(m*(c**2)*(1/(sqrt(1-(sqrt(v**2)/sqrt(c**2))))-1)))
+    return(float(m*(c**2)*(1/(sqrt(1-(v**2/c**2)))-1)))
 
 def E_nrel():
     return(float((1/2)*m*(v**2)))
