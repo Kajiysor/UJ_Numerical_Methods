@@ -33,10 +33,10 @@ def plot_err(x, h, fn, Dfn, filename):
 	plt.grid()
 	fig.savefig(filename)
 
-x = np.float32(0.3)
+x = np.float32(1)
 h = np.float32(np.logspace(start=-8, stop=-1, num=1000, endpoint=False))
 plot_err(x=x, h=h, fn=np.sin, Dfn=np.cos, filename='./float_32.png')
 
-x = np.float64(0.3)
+x = np.float64(1)
 h = np.float64(np.logspace(start=-16, stop=-1, num=1000, endpoint=False))
 plot_err(x=x, h=h, fn=np.sin, Dfn=np.cos, filename='./float_64.png')
