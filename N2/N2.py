@@ -86,8 +86,8 @@ def main():
     plt.title("Wykres wartości wektora y")
     size = np.arange(0, N, 1)
     plt.plot(size, y, label = "$y_n$", color = "blue", linewidth = 2.25)
-    plt.xlabel("Indeks")
-    plt.ylabel("Wartość")
+    plt.xlabel("Indeks n")
+    plt.ylabel("Wartość $y_n$")
     plt.legend(loc = "best")
     plt.savefig("wykres_N2.pdf")
 
