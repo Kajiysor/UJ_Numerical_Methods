@@ -5,8 +5,8 @@ def find_l(a, d, N):
     l = []
     l.clear()
     for i in range(N-1):
-        lt = a[i]/d[i]
-        l.append(lt)
+        l_temp = a[i]/d[i]
+        l.append(l_temp)
     l = np.array(l)
     return l
 
@@ -25,8 +25,8 @@ def find_z(l, f, N):
     z.clear()
     z.append(f[0])
     for i in range(1, N):
-        zt = f[i] - l[i-1] * z[i-1]
-        z.append(zt)
+        z_temp = f[i] - l[i-1] * z[i-1]
+        z.append(z_temp)
     z = np.array(z)
     return z
 
@@ -39,16 +39,16 @@ def find_y(z, c, d, N):
 
 
 def main():
-    N = 100
+    N = 50
     h = 1.0/N
 
-    ### Vector f
+    ### Wektor f
     f = np.zeros(N)
     f[N-1] = 1
-    print(f)
+    print(f"{f = }")
     ###
 
-    ### Matrix A
+    ### Macierz A
     a = np.full(N-1, 1/(h*h))
     a[N-2] = 0
     print(f"{a = }")
@@ -63,22 +63,22 @@ def main():
     print(f"{c = }")
     ###
 
-    ### Matrix L
+    ### Macierz L
     l = find_l(a, b, N)
     print(f"{l = }")
     ###
     
-    ### Matrix U
+    ### Macierz U
     d = find_d(a, b, c, N)
     print(f"{d = }")
     ###
 
-    ### Vector z
+    ### Wektor z
     z = find_z(l, f, N)
     print(f"{z = }")
     ###
 
-    ### Vector y
+    ### Wektor y
     y = find_y(z, c, d, N)
     print(f"Szukany wektor: { y = }")
     ###
